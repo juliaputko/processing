@@ -1,0 +1,404 @@
+--- 
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Canadian-Pacific Robotic Ocean Observing Facility">
+<meta property="og:title" content="Data" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://cproof.uvic.ca///data/" />
+<meta property="og:image" content="https://juliaputko.github.io/cproofwebsite//img/gliderdeck1.jpg">
+
+
+
+<link rel='shortcut icon' type='image/png' href='/favicon.png' />
+
+<title>Data - C-PROOF</title>
+
+<link rel="canonical" href="https://cproof.uvic.ca/data/">
+
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="https://cproof.uvic.ca/css/bootstrap.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="https://cproof.uvic.ca/css/clean-blog.css">
+
+<!-- Adjust Colors -->
+<link rel="stylesheet" href="https://cproof.uvic.ca/colorscheme.css">
+
+<!-- Pygments Github CSS -->
+<link rel="stylesheet" href="https://cproof.uvic.ca/css/syntax.css">
+
+<!-- Custom Fonts -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<!-- Math Jax -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js" type="text/javascript"></script>-->
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="https://cproof.uvic.ca/js/clean-blog.min.js "></script>
+
+<style>
+h3 {font: sans-serif; color: #002277}
+.datagrid table { border-collapse: collapse; text-align: left; width: 800px;  }
+.datagrid {font: normal 14px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 1px solid #006699; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; width:800px; }
+.datagrid table td, .datagrid table th { padding: 3px 10px; }
+.datagrid table thead th {background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #00557F) );background:-moz-linear-gradient( center top, #006699 5%, #00557F 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F');background-color:#006699; color:#FFFFFF; font-size: 15px; font-weight: bold; border-left: 1px solid #0070A8; }
+.datagrid table thead th:first-child { border: none; }
+.datagrid table tbody td { color: #00557F; border-left: 1px solid #E1EEF4;font-size: 14px;font-weight: normal; }
+.datagrid table tbody .alt td { background: #E1EEf4; color: #00557F; }
+.datagrid table tbody td:first-child { border-left: none; }
+.datagrid table tbody tr:last-child td { border-bottom: none; }
+.datagrid table tfoot td div { border-top: 1px solid #006699;background: #E1EEf4;}
+.datagrid table tfoot td { padding: 0; font-size: 12px }
+.datagrid table tfoot td div{ padding: 2px; }
+.date {float:left}
+.day {float:right}
+.time {float:left}
+.height {float:right}
+
+#figures {
+  /* Prevent vertical gaps */
+  font: normal 13px/150% Arial, Helvetica, sans-serif;
+  -webkit-column-count: 3;
+  -webkit-column-gap:   10px;
+  -webkit-row-gap:      10px;
+  -moz-column-count:    3;
+  -moz-column-gap:      10px;
+  column-count:         3;
+  column-gap:           10px;
+  row-gap:              10px;
+  max-width:            800px;
+}
+
+#figure {
+  /* Prevent vertical gaps */
+  font: normal 13px/150% Arial, Helvetica, sans-serif;
+  -webkit-column-count: 1;
+  -webkit-column-gap:   10px;
+  -webkit-row-gap:      10px;
+  -moz-column-count:    1;
+  -moz-column-gap:      10px;
+  column-count:         1;
+  column-gap:           10px;
+  row-gap:              10px;
+  max-width:            800px;
+}
+
+#figure img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+@media (max-width: 1200px) {
+  #figures {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
+}
+@media (max-width: 1000px) 
+  #figures {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+  }
+}
+@media (max-width: 800px) {
+  #figures {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 400px) {
+  #figures {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
+}
+
+</style>
+
+</head>
+<body >
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+<div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">C-PROOF</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="{{ '{{' }} site.baseurl {{ '}}' }}/">Home</a>
+            </li>
+
+            <li>
+                <a href="{{ '{{' }} site.baseurl {{ '}}' }}/about.html">About</a>
+            </li>
+
+            <li>
+                <a href="{{ '{{' }} site.baseurl {{ '}}' }}/platforms/">Platforms</a>
+            </li>
+
+            <li>
+              <a href="{{ '{{' }} site.baseurl {{ '}}' }}/members.html">People</a>
+          </li>
+
+          <li>
+              <a href="{{ '{{' }} site.baseurl {{ '}}' }}/datapage.html">Data</a>
+          </li>
+
+            <li>
+                <a href="{{ '{{' }} site.baseurl {{ '}}' }}/deployments/">Deployments</a>
+            </li>
+
+   
+
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+</div>
+<!-- /.container -->
+</nav>
+
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ '{{' }} site.baseurl {{ '}}' }}/img/gliderdeck1.jpg')">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="site-heading" style="padding: 75px 0">
+
+
+              {% if att['comment'] == 'Line P deployment Jan 2021.' %}
+                <h1>Line P Glider Line</h1>
+                <hr class="small">
+                <span class="subheading">Northeast Pacific Ocean</span>
+              {% endif %}
+
+
+              {% if att['comment'] == 'Calvert Island deployment' %}
+                <h1>Calvert Island Glider Line</h1>
+                <hr class="small">
+                <span class="subheading">BC Central Coast</span>
+              {% endif %}
+
+
+            </div>
+        </div>
+    </div>
+  </div>
+</header>
+
+
+
+<div class="container"></div>
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+
+{% if att['comment'] == 'Line P deployment Jan 2021.' %}
+  <p> {{ '{%' }} include lineptext.html  {{ '%}' }} </p>
+{% endif %}
+
+
+{% if att['comment'] == 'Calvert Island deployment' %}
+<p> {{ '{%' }} include calvertlinetext.html  {{ '%}' }} </p>
+{% endif %}
+
+
+<h3> Latest Mission Figures  </h3>
+
+
+{{ '{%' }} for static_file in site.static_files {{ '%}' }}
+  {{ '{%' }}  if static_file.path contains '/gliderdata/deployments/{{ link_ }}/{{ mission }}/figs/Explorer19MissionMapBig.png' {{ '%}' }}
+    <a href="{{ '{{' }} site.baseurl {{ '}}' }}/gliderdata/deployments/{{ link_ }}/{{ mission }}/figs/Explorer19MissionMapBig.png"><img src={{ '{{' }} site.baseurl {{ '}}' }}/gliderdata/deployments/{{ link_ }}/{{ mission }}/figs/Explorer19MissionMapBig.png></a>
+  {{ '{%' }}  endif {{ '%}' }}
+{{ '{%' }}  endfor {{ '%}' }}
+
+{{ '{%' }} for static_file in site.static_files {{ '%}' }}
+  {{ '{%' }}  if static_file.path contains '/gliderdata/deployments/{{ link_ }}/{{ mission }}/figs/pcolor400_{{ deploy_name }}.png' {{ '%}' }}
+    <a href="{{ '{{' }} site.baseurl {{ '}}' }}/gliderdata/deployments/{{ link_ }}/{{ mission }}/figs/pcolor400_{{ deploy_name }}.png"><img src={{ '{{' }} site.baseurl {{ '}}' }}/gliderdata/deployments/{{ link_ }}/{{ mission }}/figs/pcolor400_{{ deploy_name }}.png></a>
+  {{ '{%' }}  endif {{ '%}' }}
+{{ '{%' }}  endfor {{ '%}' }}
+
+{{ '{%' }} for static_file in site.static_files {{ '%}' }}
+  {{ '{%' }}  if static_file.path contains '/gliderdata/deployments/{{ link_ }}/{{ mission }}/figs/vv_{{ deploy_name }}.png' {{ '%}' }}
+    <a href="{{ '{{' }} site.baseurl {{ '}}' }}/gliderdata/deployments/{{ link_ }}/{{ mission }}/figs/vv_{{ deploy_name }}.png"><img src={{ '{{' }} site.baseurl {{ '}}' }}/gliderdata/deployments/{{ link_ }}/{{ mission }}/figs/vv_{{ deploy_name }}.png></a>
+  {{ '{%' }}  endif {{ '%}' }}
+{{ '{%' }}  endfor {{ '%}' }}
+
+
+<br><br>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.collapsible {
+  /*background-color: rgb(197, 197, 197);*/
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  /* font-size: 15px; */
+}
+
+.active, .collapsible:hover {
+  background-color: rgb(197, 197, 197);
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  /*background-color: #f1f1f1;*/
+}
+</style>
+
+
+{% for mission in all_ %}
+<button type="button" class="collapsible"><h3> {{ line_ }} Missions<h3></button>
+<div class="content">
+  <a href=" {{ '{{' }} site.baseurl {{ '}}' }}/gliderdata/deployments/{{ link_ }}/{{ mission }}/"><h4>{{ mission }}</h4></a> <br/>
+</div>
+{% endfor %}
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+<br><br>
+
+
+
+  <!--h3> {{ line_ }} Missions </h3>
+  <section>
+
+  {% for mission in all_ %}
+  
+       <a href=" {{ '{{' }} site.baseurl {{ '}}' }}/gliderdata/deployments/{{ link_ }}/{{ mission }}/">{{ mission }}</a> <br/>
+ 
+    
+  {% endfor %}
+  </section-->
+
+
+
+
+
+
+
+
+{% if att['comment'] == 'Line P deployment Jan 2021.' %}
+<h3> Line P News </h3>
+
+{{ '{%' }} for post in site.data.inthenews {{ '%}' }}{{ '{%' }} if post.visible == true {{ '%}' }}{{ '{%' }} if post.linep == true {{ '%}' }}
+<ul class="post-preview">   <!---post-preview  -->
+    <a href="{{ '{{' }}  post.url {{ '}}' }}">
+        <h3 class="post-title">   {{ '{{' }} post.title {{ '}}' }}
+        </h3>
+    </a>
+    <p class="post-meta" style="margin-bottom:5px">{{ '{{' }} post.date | date: "%B %-d, %Y" {{ '}}' }}</p>
+    <hr>
+  </ul>
+
+{{ '{%' }} endif {{ '%}' }}
+{{ '{%' }}  endif {{ '%}' }}
+{{ '{%' }} endfor {{ '%}' }}
+
+
+{% endif %}
+
+
+{% if att['comment'] == 'Calvert Island deployment' %}
+<h3> Calvert Line News </h3>
+
+{{ '{%' }} for post in site.data.inthenews {{ '%}' }}{{ '{%' }} if post.visible == true {{ '%}' }}{{ '{%' }} if post.calvertline == true {{ '%}' }}
+<ul class="post-preview">   <!---post-preview  -->
+    <a href="{{ '{{' }}  post.url {{ '}}' }}">
+        <h3 class="post-title">  {{ '{{' }} post.title {{ '}}' }}
+        </h3>
+    </a>
+    <p class="post-meta" style="margin-bottom:5px">{{ '{{' }} post.date | date: "%B %-d, %Y" {{ '}}' }}</p>
+    <hr>
+  </ul>
+
+{{ '{%' }} endif {{ '%}' }}
+{{ '{%' }}  endif {{ '%}' }}
+ {{ '{%' }} endfor {{ '%}' }}
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</html>
